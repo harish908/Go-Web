@@ -1,0 +1,19 @@
+syntax = "proto3";
+package note;
+option go_package = "notepb";
+
+message Note{
+	string id = 1;
+	string noteDesc = 2;
+}
+message GetNotesResponse{
+	List<Note> greet = 1;
+}
+
+service NoteService{
+	rpc getNotes(google.protobuf.Empty) returns (GetNotesResponse) {
+		option (google.api.http) = { get: "/getNotes" };
+	};
+}
+
+//protoc NotesTaker/notepb/note.proto --go_out=plugins=grpc:.
