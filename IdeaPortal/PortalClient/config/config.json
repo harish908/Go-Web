@@ -1,5 +1,6 @@
 {
   "ApiInfo" : {
-    "PortalServer" : "127.0.0.1:80"
+    "PortalClient" : "127.0.0.1:80",
+    "PortalServer" : "127.0.0.1:60"
   }
 }

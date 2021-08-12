@@ -8,7 +8,7 @@ import (
 func ConfigFile() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("json")
-	viper.AddConfigPath(".")
+	viper.AddConfigPath("./config/")
 	err := viper.ReadInConfig()
 	if err != nil {
 		panic(fmt.Errorf("Config file error: %w \n", err))
