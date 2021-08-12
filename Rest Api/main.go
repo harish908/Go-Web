@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"time"
 )
 
 type Article struct {
@@ -55,5 +56,13 @@ func main() {
 	router.HandleFunc("/singleArticle/{title}", singleArticle)
 	router.HandleFunc("/article", createArticle).Methods("POST")
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	srv := &http.Server{
+		Handler: router,
+		Addr:    "127.0.0.1:8000",
+		// Good practice: enforce timeouts for servers you create!
+		WriteTimeout: 15 * time.Second,
+		ReadTimeout:  15 * time.Second,
+	}
+
+	log.Fatal(srv.ListenAndServe())
 }
