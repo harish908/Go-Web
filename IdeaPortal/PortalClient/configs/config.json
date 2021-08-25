@@ -1,6 +1,8 @@
 {
   "ApiInfo" : {
-    "PortalClient" : "127.0.0.1:8000",
-    "PortalServer" : "127.0.0.1:8001"
-  }
+    "PortalClient" : "http://localhost:8000",
+    "PortalServer" : "http://localhost:8001/"
+  },
+  "Environment" : "Development",
+  "Trace_Name" : "portal-client"
 }

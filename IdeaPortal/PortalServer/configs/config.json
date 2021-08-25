@@ -1,0 +1,14 @@
+{
+  "ApiInfo" : {
+    "PortalServer" : "http://localhost:8001"
+  },
+  "MySqlDatabase": {
+    "User": "root",
+    "Password": "example",
+    "Database": "IdeaPortal",
+    "Host": "127.0.0.1:3306",
+    "ConnectionString": "root:example@tcp(127.0.0.1:3306)/IdeaPortal"
+  },
+  "Trace_Name" : "portal-server",
+  "Environment" : "Development"
+}
