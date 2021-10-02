@@ -7,7 +7,7 @@
     "Password": "example",
     "Database": "IdeaPortal",
     "Host": "127.0.0.1:3306",
-    "ConnectionString": "root:example@tcp(127.0.0.1:3306)/IdeaPortal"
+    "ConnectionString": "harish:password@tcp(firstdbinstance.cu0n7qauzk5e.ap-south-1.rds.amazonaws.com:3306)/mydb"
   },
   "Trace_Name" : "portal-server",
   "Environment" : "Development"

@@ -9,10 +9,10 @@ import (
 	"io"
 )
 
-type Tracing struct {
+type Tracing struct{
 	tracer opentracing.Tracer
+	closer io.Closer
 }
-
 var trace *Tracing
 
 // Init returns an instance of Jaeger Tracer.
@@ -20,7 +20,7 @@ func Init(service string) (opentracing.Tracer, io.Closer) {
 	cfg := &config.Configuration{
 		ServiceName: service,
 		Sampler: &config.SamplerConfig{
-			Type:  "const",
+			Type: "const",
 			Param: 1,
 		},
 		Reporter: &config.ReporterConfig{
@@ -34,14 +34,18 @@ func Init(service string) (opentracing.Tracer, io.Closer) {
 	return tracer, closer
 }
 
-func InitTracer() {
+func InitTracer(){
 	trace = new(Tracing)
 	tracer, closer := Init(viper.GetString("Trace_Name"))
-	defer closer.Close()
 	opentracing.SetGlobalTracer(tracer)
 	trace.tracer = tracer
+	trace.closer = closer
 }
 
-func GetTracer() opentracing.Tracer {
+func GetTracer() opentracing.Tracer{
 	return trace.tracer
+}
+
+func CloseTracer(){
+	defer trace.closer.Close()
 }

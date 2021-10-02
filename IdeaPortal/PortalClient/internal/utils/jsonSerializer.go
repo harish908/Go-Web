@@ -5,10 +5,10 @@ import (
 	"io"
 )
 
-func ToJSON(w io.Writer, body []byte) error {
+func ToJSON(w io.Writer, body []byte) error{
 	var v interface{}
 	err := json.Unmarshal(body, &v)
-	if err != nil {
+	if err != nil{
 		return err
 	}
 	e := json.NewEncoder(w)
@@ -18,7 +18,7 @@ func ToJSON(w io.Writer, body []byte) error {
 func FromJSON(r io.Reader, body []byte) error {
 	var v interface{}
 	err := json.Unmarshal(body, &v)
-	if err != nil {
+	if err != nil{
 		return err
 	}
 	e := json.NewDecoder(r)

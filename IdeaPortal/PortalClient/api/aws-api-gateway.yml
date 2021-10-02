@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: PortalClient
+  description: AWS api gateway for client
+paths:
+  /ideas:
+    get:
+      description: Return all ideas from PortalServer
+      responses:
+        '200':
+          description: OK
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: 200
+        type: http
+        uri: http://petstore.execute-api.ap-south-1.amazonaws.com/petstore/pets
+        httpMethod: GET
+  /postIdea:
+    post:
+      description: Post idea to PortalServer
+      responses:
+        '200':
+          description: OK
+      x-amazon-apigateway-integration:
+        responses:
+          default:
+            statusCode: 200
+        type: http
+        uri: http://petstore.execute-api.ap-south-1.amazonaws.com/petstore/pets
+        httpMethod: POST

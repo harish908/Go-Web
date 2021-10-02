@@ -1,0 +1,64 @@
+basePath: /
+definitions:
+  data.Idea:
+    properties:
+      createdData:
+        type: string
+      description:
+        type: string
+      estimatedTime:
+        type: integer
+      id:
+        type: integer
+      title:
+        type: string
+    type: object
+host: localhost:8000
+info:
+  contact:
+    email: soberkoder@swagger.io
+    name: API Support
+  description: This is a sample serice for managing orders
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Orders API
+  version: "1.0"
+paths:
+  /api/ideas:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/data.Idea'
+      summary: Get all Ideas
+      tags:
+      - Ideas
+  /api/postIdea:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Post ideas
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/data.Idea'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            type: string
+      summary: Post Idea
+      tags:
+      - Ideas
+swagger: "2.0"

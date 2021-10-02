@@ -5,9 +5,13 @@ WORKDIR /app
 COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
-# Copy all other files and build .exe files
+# Copy all other files and build .exe 
 COPY . ./
-RUN go build -o /PortalClient
+RUN go build -o /app/PortalClient
+
+# Use multi-stage to reduce docker image size
+FROM alpine:latest AS production
+WORKDIR /app
+COPY --from=builder /app .
 EXPOSE 8000
-# runs .exe file which was generated using go build
-CMD ["/PortalClient"]
+CMD ["/app/PortalClient"]

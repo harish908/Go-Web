@@ -1,0 +1,7 @@
+Download all 3 libraries
+go get -u github.com/swaggo/swag/cmd/swag
+go get -u github.com/swaggo/http-swagger
+go get -u github.com/alecthomas/template
+
+Generate swagger file usig 
+swag init

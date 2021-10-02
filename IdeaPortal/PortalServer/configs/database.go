@@ -14,19 +14,23 @@ type database struct {
 
 var db *database
 
-func InitDB() {
+func InitDB(){
 	db = new(database)
 	connectionString := viper.GetString("MySqlDatabase.ConnectionString")
 	sqlDb, err := sql.Open("mysql", connectionString)
-	if err != nil {
+	if err != nil{
 		panic(fmt.Errorf("Error while connecting mysql database : %w\n", err))
 	}
-	sqlDb.SetConnMaxIdleTime(3 * time.Minute)
+	err = sqlDb.Ping()
+	if err != nil{
+		panic(fmt.Errorf("Unable to ping database : %w\n", err))
+	}
+	sqlDb.SetConnMaxIdleTime(3*time.Minute)
 	sqlDb.SetMaxOpenConns(10)
 	sqlDb.SetMaxIdleConns(10)
 	db.sqlDB = sqlDb
 }
 
-func GetMySqlDB() *sql.DB {
+func GetMySqlDB() *sql.DB{
 	return db.sqlDB
 }
