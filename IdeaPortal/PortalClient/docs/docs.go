@@ -47,7 +47,7 @@ var doc = `{
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/data.Idea"
+                            "$ref": "#/definitions/models.Idea"
                         }
                     }
                 }
@@ -72,7 +72,7 @@ var doc = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/data.Idea"
+                            "$ref": "#/definitions/models.Idea"
                         }
                     }
                 ],
@@ -88,7 +88,7 @@ var doc = `{
         }
     },
     "definitions": {
-        "data.Idea": {
+        "models.Idea": {
             "type": "object",
             "properties": {
                 "createdData": {

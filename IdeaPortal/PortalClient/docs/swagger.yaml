@@ -1,6 +1,6 @@
 basePath: /
 definitions:
-  data.Idea:
+  models.Idea:
     properties:
       createdData:
         type: string
@@ -36,7 +36,7 @@ paths:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/data.Idea'
+            $ref: '#/definitions/models.Idea'
       summary: Get all Ideas
       tags:
       - Ideas
@@ -50,7 +50,7 @@ paths:
         name: request
         required: true
         schema:
-          $ref: '#/definitions/data.Idea'
+          $ref: '#/definitions/models.Idea'
       produces:
       - application/json
       responses:

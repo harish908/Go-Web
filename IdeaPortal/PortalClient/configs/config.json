@@ -1,8 +1,19 @@
 {
-  "ApiInfo" : {
-    "PortalClient" : "http://localhost:8000",
-    "PortalServer" : "http://localhost:8001/"
+  "PortalClient":{
+    "baseURL": "http://localhost:8000/"
+  },
+  "PortalServer":{
+    "baseURL": "http://localhost:8001/"
+  },
+  "MySqlDatabase": {
+    "User": "root",
+    "Password": "example",
+    "Database": "IdeaPortal",
+    "Host": "127.0.0.1:3306",
+    "ConnectionString": "root:example@tcp(127.0.0.1:3306)/IdeaPortal"
   },
   "Environment" : "Development",
-  "Trace_Name" : "portal-client"
+  "Tracing" : {
+    "Name" : "portal-client"
+  }
 }

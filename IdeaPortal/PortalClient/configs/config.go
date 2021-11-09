@@ -2,6 +2,7 @@ package configs
 
 import (
 	"fmt"
+
 	"github.com/spf13/viper"
 )
 
@@ -11,6 +12,6 @@ func InitConfigFile() {
 	viper.AddConfigPath("./configs/")
 	err := viper.ReadInConfig()
 	if err != nil {
-		panic(fmt.Errorf("Config file error: %w \n", err))
+		panic(fmt.Errorf("config file error: %w", err))
 	}
 }

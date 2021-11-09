@@ -33,7 +33,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/data.Idea"
+                            "$ref": "#/definitions/models.Idea"
                         }
                     }
                 }
@@ -58,7 +58,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/data.Idea"
+                            "$ref": "#/definitions/models.Idea"
                         }
                     }
                 ],
@@ -74,7 +74,7 @@
         }
     },
     "definitions": {
-        "data.Idea": {
+        "models.Idea": {
             "type": "object",
             "properties": {
                 "createdData": {

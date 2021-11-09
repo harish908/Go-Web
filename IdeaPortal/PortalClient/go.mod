@@ -12,11 +12,13 @@ require (
 	github.com/go-openapi/jsonreference v0.19.6 // indirect
 	github.com/go-openapi/runtime v0.19.31
 	github.com/go-openapi/strfmt v0.20.2 // indirect
+	github.com/go-sql-driver/mysql v1.5.0
 	github.com/go-stack/stack v1.8.1 // indirect
 	github.com/go-swagger/go-swagger v0.27.0 // indirect
 	github.com/gorilla/mux v1.8.0
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0
+	github.com/prometheus/common v0.4.0
 	github.com/rogpeppe/go-internal v1.8.0 // indirect
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.9.0

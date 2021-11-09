@@ -1,4 +1,4 @@
-package routes
+package cmd
 
 import (
 	"PortalClient/internal/handlers"
