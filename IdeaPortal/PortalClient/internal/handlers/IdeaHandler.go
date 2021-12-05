@@ -1,18 +1,18 @@
 package handlers
 
 import (
-	"PortalClient/internal/models"
-	"PortalClient/internal/repository"
+	"PortalClient/internal/gateways"
+	"PortalClient/pkg/serializer"
 	"PortalClient/pkg/tracing"
-	"encoding/json"
+	"context"
 	"io/ioutil"
 	"net/http"
 
 	"github.com/opentracing/opentracing-go"
-	ottag "github.com/opentracing/opentracing-go/ext"
-	otlog "github.com/opentracing/opentracing-go/log"
+	"github.com/prometheus/common/log"
 )
 
+/*
 // @Summary Get all Ideas
 // @Tags Ideas
 // @Accept json
@@ -80,9 +80,8 @@ func PostIdeaHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
-}
+}*/
 
-/*
 // @Summary Get all Ideas
 // @Tags Ideas
 // @Accept json
@@ -152,4 +151,3 @@ func PostIdeaHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Unable to marshal json", http.StatusInternalServerError)
 	}
 }
-*/
